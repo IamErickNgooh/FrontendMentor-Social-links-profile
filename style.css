@@ -1,69 +1,104 @@
+/* ---------- Reset ---------- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
+  
+/* ---------- Base ---------- */
 body {
     background-color: hsl(0, 0%, 8%);
     color: hsl(0, 0%, 100%);
     font-family: 'Inter', sans-serif;
+    
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
 }
-
+  
+/* ---------- Card ---------- */
 .card {
     background-color: hsl(0, 0%, 12%);
     max-width: 360px;
-    border-radius: 10px;
     padding: 20px;
+    border-radius: 10px;
+  
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-
+  
+/* ---------- Profile image ---------- */
 .profile-img {
     width: 35%;
     border-radius: 50%;
     margin-bottom: 20px;
 }
+  
+/* ---------- Text ---------- */
 .name {
     font-size: 1.6rem;
     font-weight: 700;
     margin-bottom: 5px;
 }
+  
 .location {
     font-size: 0.9rem;
     font-weight: 600;
     color: hsl(75, 94%, 57%);
     margin-bottom: 18px;
 }
+  
 .role {
     font-size: 0.9rem;
     font-weight: 400;
     margin-bottom: 14px;
-    padding: 12px;
+    text-align: center;
 }
-
+  
+/* ---------- Links ---------- */
 .links {
     width: 100%;
 }
-.links .button {
+  
+.button {
+    display: block;
+    width: 100%;
+    text-align: center;
     text-decoration: none;
-    color: hsl(0, 0%, 100%);
+  
     background-color: hsl(0, 0%, 20%);
+    color: hsl(0, 0%, 100%);
     font-size: 0.9rem;
     font-weight: 600;
-    display: block;
-    border-radius: 10px;
-    text-align: center;
+  
     padding: 16px;
     margin-bottom: 16px;
+    border-radius: 10px;
+  
+    /* Smooth change */
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
-.links .button:hover {
+  
+/* Hover state */
+.button:hover {
     background-color: hsl(75, 94%, 57%);
     color: hsl(0, 0%, 12%);
-    transition: background-color 0.2s ease;
+    cursor: pointer;
 }
+  
+/* Keyboard focus */
+.button:focus-visible {
+    outline: 2px solid hsl(75, 94%, 57%);
+    outline-offset: 4px;
+}
+  
+/* ---------- Desktop adjustment (optional) ---------- */
+@media (min-width: 1024px) {
+    .card {
+      max-width: 400px;
+      padding: 32px;
+    }
+}
+  
